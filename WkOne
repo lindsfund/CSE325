@@ -1,0 +1,50 @@
+using System;
+class wkOne {
+    static void Main() {
+        // variable set up
+        string userName, userLocation;
+        DateTime currentDate, christmasDay;
+        TimeSpan daysTilChristmas;
+        double width, height, woodLength, glassArea;
+        string widthString, heightString;
+
+
+        //variable define
+        userName = "Lindsey Fund";
+        userLocation = "Stafford, VA";
+        currentDate = DateTime.Today;
+        christmasDay = new DateTime(2023, 12,25);
+
+        //get user inout for height and width of window
+        Console.WriteLine("Enter width of window: ");
+        widthString = Console.ReadLine();
+        width = double.Parse(widthString);
+
+        Console.WriteLine("Enter height of window: ");
+        heightString = Console.ReadLine();
+        height = double.Parse(heightString);
+
+
+        //computations
+        daysTilChristmas = christmasDay - currentDate;
+        woodLength = 2 * (width + height) * 3.25;
+        glassArea = 2 * (width * height);
+
+        //output
+        Console.WriteLine("-------------");
+        Console.WriteLine("My name is " + userName);
+        Console.WriteLine("I am from " + userLocation);
+        Console.WriteLine("-------------");
+        Console.WriteLine("Today is " + currentDate.ToString("d"));
+        Console.WriteLine("Christmas is " + christmasDay.ToString("d"));
+        Console.WriteLine("There are " + daysTilChristmas.Days + " days until Christmas 2023.");
+        Console.WriteLine("-------------");
+        Console.WriteLine("The length of the wood is " +
+            woodLength + " feet");
+        Console.WriteLine("The area of the glass is " +
+            glassArea + " square metres");
+
+        //keep the program from terminating
+        Console.ReadKey();
+    }
+}
